@@ -66,15 +66,43 @@
  */
 @property(nonatomic, getter=isContinuous) BOOL continuous;
 
-// 圆心和半径
-@property (nonatomic)   CGPoint     arcCenter;     // 圆心
-@property (nonatomic)   CGFloat     radius;     // 半径
-@property (nonatomic)   CGFloat     startAngel; // 开始的角度
-@property (nonatomic)   CGFloat     endAngel;   // 结束的角度
-@property (nonatomic)   BOOL        clockwise;  // 是否顺时针
+/**
+ * The arc's circle center point.
+ */
+@property (nonatomic)   CGPoint     sliderCenter;
 
-@property (nonatomic)   CGFloat     lineWidth;  // 线宽
-@property (nonatomic)   CGFloat     thumbRadius;    // 拖动按钮半径
+/**
+ * The arc's circle radius.
+ */
+@property (nonatomic)   CGFloat     sliderRadius;
+
+/**
+ * Begin of the arc's angel (UIKit's Coordinate)
+ */
+@property (nonatomic)   CGFloat     startAngel;
+
+/**
+ * End of the arc's angel (UIKit's Coordinate)
+ */
+@property (nonatomic)   CGFloat     endAngel;
+
+/**
+ * Clock wise or not.
+ * Default value is YES
+ */
+@property (nonatomic)   BOOL        clockwise;
+
+/**
+ * The curve line width.
+ * Default value is 6.0
+ */
+@property (nonatomic)   CGFloat     lineWidth;
+
+/**
+ * The thumb radius.
+ * Default value is 12.0
+ */
+@property (nonatomic)   CGFloat     thumbRadius;
 
 @end
 
@@ -106,4 +134,7 @@ CGFloat translateValueFromSourceIntervalToDestinationInterval(CGFloat sourceValu
  */
 CGFloat angleBetweenThreePoints(CGPoint centerPoint, CGPoint p1, CGPoint p2);
 
+/**
+ * Get the point's coordinate by angel
+ */
 CGPoint pointWithCenterRadiusAngle(CGPoint center, CGFloat radius, CGFloat angle);

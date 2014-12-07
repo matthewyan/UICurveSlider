@@ -158,14 +158,14 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGPoint middlePoint = self.arcCenter;
+	CGPoint middlePoint = self.sliderCenter;
     
 	CGContextSetLineWidth(context, self.lineWidth);
 	
     [self.maximumTrackTintColor setStroke];
-    [self drawCircularTrack:self.maximumValue atPoint:middlePoint withRadius:self.radius inContext:context];
+    [self drawCircularTrack:self.maximumValue atPoint:middlePoint withRadius:self.sliderRadius inContext:context];
     [self.minimumTrackTintColor setStroke];
-    self.thumbCenterPoint = [self drawCircularTrack:self.value atPoint:middlePoint withRadius:self.radius inContext:context];
+    self.thumbCenterPoint = [self drawCircularTrack:self.value atPoint:middlePoint withRadius:self.sliderRadius inContext:context];
 	
 	[self.thumbTintColor setFill];
 	[self drawThumbAtPoint:self.thumbCenterPoint inContext:context];
@@ -184,9 +184,8 @@
 	CGPoint tapLocation = [panGestureRecognizer locationInView:self];
 	switch (panGestureRecognizer.state) {
 		case UIGestureRecognizerStateChanged: {
-            CGPoint sliderCenter = self.arcCenter;
-            CGPoint sliderStartPoint = pointWithCenterRadiusAngle(sliderCenter, self.radius, self.startAngel);
-			CGFloat angle = angleBetweenThreePoints(sliderCenter, sliderStartPoint, tapLocation);
+            CGPoint sliderStartPoint = pointWithCenterRadiusAngle(self.sliderCenter, self.sliderRadius, self.startAngel);
+			CGFloat angle = angleBetweenThreePoints(self.sliderCenter, sliderStartPoint, tapLocation);
             if (angle < 0) {
                 angle = -angle;
             }
