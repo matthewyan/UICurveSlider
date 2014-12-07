@@ -93,10 +93,16 @@
 @property (nonatomic)   BOOL        clockwise;
 
 /**
- * The curve line width.
- * Default value is 6.0
+ * The curve line's width.
+ * Default value is 4.0
  */
 @property (nonatomic)   CGFloat     lineWidth;
+
+/**
+ * The selected line's width
+ * The Default value is 6.0
+ */
+@property (nonatomic)   CGFloat     trackLineWidth;
 
 /**
  * The thumb radius.

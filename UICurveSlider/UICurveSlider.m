@@ -111,7 +111,8 @@
 	self.continuous = YES;
 	self.thumbCenterPoint = CGPointZero;
     self.clockwise = YES;
-    self.lineWidth = 6.0f;
+    self.lineWidth = 4.0f;
+    self.trackLineWidth = 6.0f;
     self.thumbRadius = 12.0f;
 	
     /**
@@ -161,9 +162,10 @@
 	CGPoint middlePoint = self.sliderCenter;
     
 	CGContextSetLineWidth(context, self.lineWidth);
-	
     [self.maximumTrackTintColor setStroke];
     [self drawCircularTrack:self.maximumValue atPoint:middlePoint withRadius:self.sliderRadius inContext:context];
+    
+    CGContextSetLineWidth(context, self.trackLineWidth);
     [self.minimumTrackTintColor setStroke];
     self.thumbCenterPoint = [self drawCircularTrack:self.value atPoint:middlePoint withRadius:self.sliderRadius inContext:context];
 	
@@ -212,6 +214,7 @@
 			break;
 	}
 }
+
 - (void)tapGestureHappened:(UITapGestureRecognizer *)tapGestureRecognizer {
 	if (tapGestureRecognizer.state == UIGestureRecognizerStateEnded) {
 		CGPoint tapLocation = [tapGestureRecognizer locationInView:self];
