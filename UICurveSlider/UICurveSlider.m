@@ -24,7 +24,7 @@
 #pragma mark - Drawing methods
 
 - (void)drawThumbAtPoint:(CGPoint)sliderButtonCenterPoint inContext:(CGContextRef)context;
-- (CGPoint)drawCircularTrack:(float)track atPoint:(CGPoint)point withRadius:(CGFloat)radius inContext:(CGContextRef)context;
+- (CGPoint)drawCircularTrack:(CGFloat)track atPoint:(CGPoint)point withRadius:(CGFloat)radius inContext:(CGContextRef)context;
 
 @end
 
@@ -32,7 +32,7 @@
 @implementation UICurveSlider
 
 @synthesize value = _value;
-- (void)setValue:(float)value {
+- (void)setValue:(CGFloat)value {
 	if (value != _value) {
 		if (value > self.maximumValue) { value = self.maximumValue; }
 		if (value < self.minimumValue) { value = self.minimumValue; }
@@ -44,7 +44,7 @@
 	}
 }
 @synthesize minimumValue = _minimumValue;
-- (void)setMinimumValue:(float)minimumValue {
+- (void)setMinimumValue:(CGFloat)minimumValue {
 	if (minimumValue != _minimumValue) {
 		_minimumValue = minimumValue;
 		if (self.maximumValue < self.minimumValue)	{ self.maximumValue = self.minimumValue; }
@@ -52,7 +52,7 @@
 	}
 }
 @synthesize maximumValue = _maximumValue;
-- (void)setMaximumValue:(float)maximumValue {
+- (void)setMaximumValue:(CGFloat)maximumValue {
 	if (maximumValue != _maximumValue) {
 		_maximumValue = maximumValue;
 		if (self.minimumValue > self.maximumValue)	{ self.minimumValue = self.maximumValue; }
@@ -139,7 +139,7 @@
 	UIGraphicsPopContext();
 }
 
-- (CGPoint)drawCircularTrack:(float)track atPoint:(CGPoint)center withRadius:(CGFloat)radius inContext:(CGContextRef)context {
+- (CGPoint)drawCircularTrack:(CGFloat)track atPoint:(CGPoint)center withRadius:(CGFloat)radius inContext:(CGContextRef)context {
 	UIGraphicsPushContext(context);
 	CGContextBeginPath(context);
 	
@@ -239,13 +239,14 @@
 
 /** @name Utility Functions */
 #pragma mark - Utility Functions
-float translateValueFromSourceIntervalToDestinationInterval(float sourceValue, float sourceIntervalMinimum, float sourceIntervalMaximum, float destinationIntervalMinimum, float destinationIntervalMaximum) {
+
+CGFloat translateValueFromSourceIntervalToDestinationInterval(CGFloat sourceValue, CGFloat sourceIntervalMinimum, CGFloat sourceIntervalMaximum, CGFloat destinationIntervalMinimum, CGFloat destinationIntervalMaximum) {
     if (sourceValue == sourceIntervalMinimum)
         return destinationIntervalMinimum;
     if (sourceValue == sourceIntervalMaximum)
         return destinationIntervalMaximum;
     
-	float a, b, destinationValue;
+	CGFloat a, b, destinationValue;
 	
 	a = (destinationIntervalMaximum - destinationIntervalMinimum) / (sourceIntervalMaximum - sourceIntervalMinimum);
 	b = destinationIntervalMaximum - a*sourceIntervalMaximum;

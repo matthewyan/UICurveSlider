@@ -24,7 +24,7 @@
  * Setting this property causes the receiver to redraw itself using the new value.
  * If you try to set a value that is below the minimum or above the maximum value, the minimum or maximum value is set instead. The default value of this property is 0.0.
  */
-@property (nonatomic) float value;
+@property (nonatomic) CGFloat value;
 
 /**
  * The minimum value of the receiver.
@@ -32,7 +32,7 @@
  * If you change the value of this property, and the current value of the receiver is below the new minimum, the current value is adjusted to match the new minimum value automatically.
  * The default value of this property is 0.0.
  */
-@property (nonatomic) float minimumValue;
+@property (nonatomic) CGFloat minimumValue;
 
 /**
  * The maximum value of the receiver.
@@ -40,7 +40,7 @@
  * If you change the value of this property, and the current value of the receiver is above the new maximum, the current value is adjusted to match the new maximum value automatically.
  * The default value of this property is 1.0.
  */
-@property (nonatomic) float maximumValue;
+@property (nonatomic) CGFloat maximumValue;
 
 /**
  * The color shown for the portion of the slider that is filled.
@@ -94,7 +94,7 @@
  * Formulas :	a = (dMax - dMin) / (sMax - sMin)
  *				b = dMax - a*sMax = dMin - a*sMin
  */
-float translateValueFromSourceIntervalToDestinationInterval(float sourceValue, float sourceIntervalMinimum, float sourceIntervalMaximum, float destinationIntervalMinimum, float destinationIntervalMaximum);
+CGFloat translateValueFromSourceIntervalToDestinationInterval(CGFloat sourceValue, CGFloat sourceIntervalMinimum, CGFloat sourceIntervalMaximum, CGFloat destinationIntervalMinimum, CGFloat destinationIntervalMaximum);
 /**
  * Returns the smallest angle between three points, one of them clearly indicated as the "junction point" or "center point".
  * @param centerPoint	The "center point" or "junction point"

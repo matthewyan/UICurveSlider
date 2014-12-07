@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "UICurveSlider.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UICurveSlider *curveSlider;
 
 @end
 
@@ -17,6 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.curveSlider.minimumValue = 0;
+    self.curveSlider.maximumValue = 100;
+    self.curveSlider.continuous = NO;
+    self.curveSlider.maximumTrackTintColor = [UIColor greenColor];
+    
+    self.curveSlider.arcCenter = CGPointMake(140, 140);
+    self.curveSlider.radius = 120;
+    self.curveSlider.startAngel = M_PI_4*5;
+    self.curveSlider.endAngel = M_PI_4*7;
+    self.curveSlider.clockwise = YES;
 }
 
 - (void)didReceiveMemoryWarning {
