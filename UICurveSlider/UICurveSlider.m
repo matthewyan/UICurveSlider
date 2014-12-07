@@ -9,6 +9,10 @@
 //  This file is part of the UICircularSlider Library, released under the MIT License.
 //
 
+//  UICurveSlider
+//  Edit by matthewyan
+//  12/07/14
+
 #import "UICurveSlider.h"
 
 @interface UICurveSlider()

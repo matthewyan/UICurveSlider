@@ -9,6 +9,10 @@
 //  This file is part of the UICircularSlider Library, released under the MIT License.
 //
 
+//  UICurveSlider
+//  Edit by matthewyan
+//  12/07/14
+
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
