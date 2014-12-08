@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB1936DD-6E51-4761-9590-806431F367AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>UICurveSlider</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C1D2179FB0C493DEB188C46CF31A58A6823EEFA8</key>
+		<string>https://github.com/matthewyan/UICurveSlider.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>UICurveSlider.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C1D2179FB0C493DEB188C46CF31A58A6823EEFA8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/matthewyan/UICurveSlider.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C1D2179FB0C493DEB188C46CF31A58A6823EEFA8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C1D2179FB0C493DEB188C46CF31A58A6823EEFA8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UICurveSlider</string>
+		</dict>
+	</array>
+</dict>
+</plist>
